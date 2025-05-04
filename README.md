@@ -7,4 +7,5 @@ and you will be asked to edit it. The config acts an override for the default se
 ### Config Structure
 `<dimension> <seed>`   
 Example:   
-`minecraft:the_nether 1234`
+`minecraft:the_nether 0`   
+Note: by default nether and end will be added to the config, if undesired remove the respective lines. Please enter the seed you wish to use instead of the default value 0.
