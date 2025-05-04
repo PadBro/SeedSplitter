@@ -7,7 +7,6 @@
   "authors": [],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/seedsplitter/icon.png",
   "environment": "server",
   "accessWidener" : "seedsplitter.accesswidener",
   "entrypoints": {
@@ -20,7 +19,6 @@
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
-    "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": ">=1.21"
   }
 }
