@@ -2,7 +2,6 @@ package tronka.seedsplitter.mixin;
 
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.WorldGenerationProgressListener;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.random.RandomSequencesState;
 import net.minecraft.world.SaveProperties;
@@ -30,7 +29,7 @@ public class ServerWorldMixin {
     private long seed;
 
     @Inject(method = "<init>", at = @At("CTOR_HEAD"))
-    private void init(MinecraftServer server, Executor workerExecutor, LevelStorage.Session session, ServerWorldProperties properties, RegistryKey<World> worldKey, DimensionOptions dimensionOptions, WorldGenerationProgressListener worldGenerationProgressListener, boolean debugWorld, long seed, List spawners, boolean shouldTickTime, RandomSequencesState randomSequencesState, CallbackInfo ci) {
+    private void init(MinecraftServer server, Executor workerExecutor, LevelStorage.Session session, ServerWorldProperties properties, RegistryKey<World> worldKey, DimensionOptions dimensionOptions, boolean debugWorld, long seed, List spawners, boolean shouldTickTime, RandomSequencesState randomSequencesState, CallbackInfo ci) {
         this.seed = SeedSplitter.getSeed(server, worldKey);
         ((World)(Object)this).biomeAccess = new BiomeAccess((BiomeAccess.Storage) this, BiomeAccess.hashSeed(this.seed));
     }
